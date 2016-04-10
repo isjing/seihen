@@ -1,0 +1,6 @@
+{
+  "name": "Seihen",
+  "tagline": "PHP-WAF",
+  "body": "# Seihen\r\n\r\nSeihen is a lightweight PHP-WAF (Web Application Firewall), the stack of rules is defined in an array and the rules are executed in FIFO order.\r\n\r\n## Features\r\n\r\n    - Stack of rules\r\n    - CIDR support\r\n    - IP Filtering/Blocking\r\n    - GET Filtering/Blocking\r\n    - POST Filtering/Blocking\r\n\r\n## Requirements\r\n\r\n    - PHP 5.6+\r\n\r\n## Usage\r\n\r\nThis example shows how to filter a subnet and block three specific IPs.\r\n\r\n```PHP\r\nuse Seihen\\Seihen;\r\nuse Seihen\\Rules\\IP\\Filtering\\IPFiltering;\r\nuse Seihen\\Rules\\IP\\Blocking\\IPBlocking;\r\n\r\n$rules = [\r\n    IPFiltering::class => '192.168.10.0/24',\r\n    IPBlocking::class => '192.168.10.1',\r\n    IPBlocking::class => '192.168.10.2',\r\n    IPBlocking::class => '192.168.10.3',\r\n];\r\n\r\n$seihen = new Seihen($rules);\r\n```\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}

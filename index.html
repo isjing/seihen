@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Seihen by isjing</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Seihen</h1>
+        <h2>PHP-WAF</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/isjing/seihen/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/isjing/seihen/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/isjing/seihen" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="seihen" class="anchor" href="#seihen" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Seihen</h1>
+
+<p>Seihen is a lightweight PHP-WAF (Web Application Firewall), the stack of rules is defined in an array and the rules are executed in FIFO order.</p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+
+<pre><code>- Stack of rules
+- CIDR support
+- IP Filtering/Blocking
+- GET Filtering/Blocking
+- POST Filtering/Blocking
+</code></pre>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
+
+<pre><code>- PHP 5.6+
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>This example shows how to filter a subnet and block three specific IPs.</p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Seihen\Seihen</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Seihen\Rules\IP\Filtering\IPFiltering</span>;</span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">Seihen\Rules\IP\Blocking\IPBlocking</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$rules</span> <span class="pl-k">=</span> [</span>
+<span class="pl-s1">    <span class="pl-c1">IPFiltering</span><span class="pl-k">::</span><span class="pl-c1">class</span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>192.168.10.0/24<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    <span class="pl-c1">IPBlocking</span><span class="pl-k">::</span><span class="pl-c1">class</span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>192.168.10.1<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    <span class="pl-c1">IPBlocking</span><span class="pl-k">::</span><span class="pl-c1">class</span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>192.168.10.2<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    <span class="pl-c1">IPBlocking</span><span class="pl-k">::</span><span class="pl-c1">class</span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>192.168.10.3<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">];</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$seihen</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">Seihen</span>(<span class="pl-smi">$rules</span>);</span></pre></div>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
