@@ -1,5 +1,7 @@
 # Seihen
 
+[![Build Status](https://travis-ci.org/isjing/seihen.svg?branch=master)](https://travis-ci.org/isjing/seihen)
+
 Seihen is a lightweight PHP-WAF (Web Application Firewall), the stack of rules is defined in an array and the rules are executed in FIFO order.
 
 ## Features
