@@ -21,6 +21,8 @@ Seihen is a lightweight PHP-WAF (Web Application Firewall), the stack of rules i
 This example shows how to filter a subnet and block three specific IPs.
 
 ```PHP
+require '/path/to/Seihen/Autoloader.php';
+
 use Seihen\Seihen;
 use Seihen\Rules\IP\Filtering\IPFiltering;
 use Seihen\Rules\IP\Blocking\IPBlocking;
